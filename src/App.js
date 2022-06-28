@@ -13,7 +13,7 @@ function App() {
     async function doLoad() {
       const data = await getPokemon();
       console.log(data);
-      setPokemon(data);
+      setPokemon(data.results);
     }
 
     doLoad();
@@ -23,8 +23,15 @@ function App() {
 
   return (
     <div className="App">
-      <PokemonSearch />
-      <YelpSearch />
+      <div className='App-Header'>
+        {
+          pokemon.map((poke, i) => <div key={poke.pokemon + i}>
+            <p>{poke.pokemon}</p>
+          </div>)
+        }
+        <PokemonSearch />
+        <YelpSearch />
+      </div>
     </div>
   );
 }
