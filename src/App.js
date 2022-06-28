@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     async function doLoad() {
       const data = await getPokemon();
-      console.log(data);
       setPokemon(data.results);
     }
 
@@ -27,6 +26,8 @@ function App() {
         {
           pokemon.map((poke, i) => <div key={poke.pokemon + i}>
             <p>{poke.pokemon}</p>
+            <img src={poke.url_image}/>
+
           </div>)
         }
         <PokemonSearch />
