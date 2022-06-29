@@ -9,7 +9,7 @@ export default function PokemonSearch() {
   
   useEffect(() => {
     fetchAndStorePokemon();
-  }, []);
+  });
   
   async function fetchAndStorePokemon() {
     const data = await getPokemon(pokemonQuery);

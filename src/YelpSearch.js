@@ -11,11 +11,10 @@ export default function YelpSearch() {
 
   useEffect(() => {
     fetchAndStoreYelp();
-  }, []);
+  });
 
   async function fetchAndStoreYelp() {
     const data = await getYelp(yelpQuery);
-    console.log(data);
     setBusinesses(data.businesses);
   }
 
