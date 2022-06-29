@@ -8,10 +8,10 @@ export default function PokemonSearch() {
   const [pokemonQuery, setPokemonQuery] = useState([]);
   
   useEffect(() => {
-    doLoad();
+    fetchAndStorePokemon();
   }, []);
   
-  async function doLoad() {
+  async function fetchAndStorePokemon() {
     const data = await getPokemon(pokemonQuery);
     setPokemon(data.results);
   }
@@ -20,7 +20,7 @@ export default function PokemonSearch() {
   
   async function handleSubmit(e) {
     e.preventDefault();
-    await doLoad();
+    await fetchAndStorePokemon();
     setPokemonQuery('');
   }
   

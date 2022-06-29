@@ -24,7 +24,6 @@ export default function YelpSearch() {
     setYelpQuery('');
   }
 
-  console.log(yelpQuery);
 
   return (
     <div className='yelp-search'>
