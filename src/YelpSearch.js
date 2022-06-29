@@ -7,7 +7,7 @@ export default function YelpSearch() {
 
 
   const [businesses, setBusinesses] = useState([]);
-  const [yelpQuery, setYelpQuery] = useState([]);
+  const [yelpQuery, setYelpQuery] = useState('Austin');
 
   useEffect(() => {
     fetchAndStoreYelp();
@@ -15,7 +15,8 @@ export default function YelpSearch() {
 
   async function fetchAndStoreYelp() {
     const data = await getYelp(yelpQuery);
-    setBusinesses(data.results);
+    console.log(data);
+    setBusinesses(data.businesses);
   }
 
   async function handleYelpSubmit(e) {
