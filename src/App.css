@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+.pokemon img{
+  width: 100px;
+
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
